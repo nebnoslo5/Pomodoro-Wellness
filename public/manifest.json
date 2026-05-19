@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Pomodoro Wellness",
+  "version": "1.0",
+  "description": "A Chrome extension widget to improve wellness for desk jobs",
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["storage", "activeTab", "scripting"],
+  "content_scripts": [
+    {
+      "matches": ["https://*/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
